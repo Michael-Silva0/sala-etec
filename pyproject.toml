@@ -11,6 +11,8 @@ dependencies = [
 
 [project.scripts]
 sala_etec = "sala_etec.app:main"
+criar_banco = "sala_etec.create_database:main"
+criar_dados = "sala_etec.seed:main"
 
 
 [build-system]

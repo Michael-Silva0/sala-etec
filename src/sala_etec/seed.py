@@ -258,5 +258,8 @@ def criar_dados():
         print("Dados fictícios criados com sucesso!")
 
 
-if __name__ == "__main__":
+def main():
     criar_dados()
+
+if __name__ == "__main__":
+    main()
