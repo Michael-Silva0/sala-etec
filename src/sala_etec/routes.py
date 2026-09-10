@@ -204,3 +204,16 @@ def excluir_material(id):
     db.session.commit()
 
     return redirect(url_for("main.listar_materiais"))
+
+
+@main_bp.route("/disciplinas")
+def disciplinas_page():
+    return render_template("disciplinas.html")
+
+@main_bp.route("/atividades")
+def atividades_page():
+    return render_template("atividades.html")
+
+@main_bp.route("/favoritos")
+def favoritos_page():
+    return render_template("favoritos.html")
