@@ -1,7 +1,8 @@
 # Importar a instancia do banco 'db' criada no arquivo database.py
-from sqlalchemy.orm import backref
-from sala_etec.database import db
 from datetime import datetime
+
+from sala_etec.database import db
+
 
 # Definir a classe que ira realizar todo o mapeamento da minha tabela
 class Curso(db.Model):

@@ -1,8 +1,8 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session
+from flask import Blueprint, redirect, render_template, request, session, url_for
 from werkzeug.security import check_password_hash
+
 from sala_etec.database import db
-from sala_etec.models import Curso, Modulo, Disciplina, Material, Usuario
-from sala_etec.decorators import login_required
+from sala_etec.models import Disciplina, Material, Usuario
 
 # Criar o modulo principal das rotas
 main_bp = Blueprint('main', __name__)

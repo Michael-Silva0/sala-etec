@@ -3,7 +3,6 @@ from flask import Flask
 from sala_etec.database import db
 from sala_etec.routes import main_bp
 
-
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "chave-dev-sala-etec"

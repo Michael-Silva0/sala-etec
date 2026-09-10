@@ -1,6 +1,7 @@
 from sala_etec.app import app
 from sala_etec.database import db
 
+
 def main():
     with app.app_context():
         db.create_all()
