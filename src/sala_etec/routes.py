@@ -60,25 +60,29 @@ def home():
     if not usuario_id:
         return redirect(url_for("main.index"))
 
-    usuario = db.session.get(
+    user = db.session.get(
         Usuario,
         usuario_id
     )
 
-    if not usuario:
+    if not user:
         session.clear()
         return redirect(url_for("main.index"))
 
     return render_template(
         "home.html",
-        usuario=usuario
+        user=user
     )
 
 
 @main_bp.route("/materiais")
 def listar_materiais():
     busca = request.args.get("busca", "").strip()
-
+    usuario_id = session.get("usuario_id")
+    user = db.session.get(
+        Usuario,
+        usuario_id
+    )
     if busca:
         materiais = Material.query.filter(
             Material.titulo.ilike(f"%{busca}%")
@@ -90,6 +94,7 @@ def listar_materiais():
         "materiais.html",
         materiais=materiais,
         busca=busca,
+        user=user
     )
 
 
