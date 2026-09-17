@@ -213,12 +213,33 @@ def excluir_material(id):
 
 @main_bp.route("/disciplinas")
 def disciplinas_page():
-    return render_template("disciplinas.html")
+    usuario_id = session.get("usuario_id")
+    user = db.session.get(
+        Usuario,
+        usuario_id
+    )
+    
+    return render_template("disciplinas.html", user=user)
 
 @main_bp.route("/atividades")
 def atividades_page():
-    return render_template("atividades.html")
+
+    usuario_id = session.get("usuario_id")
+    user = db.session.get(
+        Usuario,
+        usuario_id
+    )
+    
+
+    return render_template("atividades.html", user=user)
 
 @main_bp.route("/favoritos")
 def favoritos_page():
-    return render_template("favoritos.html")
+    usuario_id = session.get("usuario_id")
+    user = db.session.get(
+        Usuario,
+        usuario_id
+    )
+    
+
+    return render_template("favoritos.html", user=user)
